@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ventilação do Dragão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+          <feColorMatrix
+            in="blur"
+            type="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="highContrastGraphic"
+          />
+          <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="container">
+      <h1>Ventilação do Dragão</h1>
+
+      <div class="input-group">
+        <label for="sneezes">Digite a sequência de espirros do dragão (F para forte, f para fraco):</label>
+        <input type="text" id="sneezes" placeholder="Exemplo: FFfFfFf" />
+      </div>
+      <br />
+      <br />
+      <div class="button-group">
+        <button id="calculate" class="gooey-button">
+          CALCULAR
+          <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+          </span>
+        </button>
+
+        <button id="back" class="gooey-button">
+          VOLTAR
+          <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="result" id="result">Resultado aparecerá aqui...</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
